@@ -1,0 +1,84 @@
+{
+  "epd": {
+    "id": "HUB-5210",
+    "source_file": "EPD_HUB-5210_2026-06-27_en.pdf",
+    "program_operator": "EPD Hub",
+    "published_date": "2026-01-30",
+    "valid_until": "2031-01-29",
+    "standard": "EN 15804:2012+A2:2019/AC:2021",
+    "verification": {
+      "type": "third_party",
+      "verifier": "Vera Durão"
+    }
+  },
+  "product": {
+    "name": "Envirocrete 40% 32MPa",
+    "manufacturer": "Boral Limited",
+    "type": "Ready-mix concrete",
+    "standard": "AS 1379"
+  },
+  "location": {
+    "production": "Melbourne South-East, VIC, Australia",
+    "plants": ["Cranbourne", "Clayton", "Dandenong", "Healesville", "Montrose", "Nunawading", "Pakenham"],
+    "country": "Australia",
+    "state": "VIC"
+  },
+  "characteristics": {
+    "compressive_strength": {
+      "value": 32,
+      "unit": "MPa",
+      "class": "N32"
+    },
+    "strength_evaluation_days": 28,
+    "exposure_class": null,
+    "aggregate_size_mm": null,
+    "slump_mm": null,
+    "application": "Lower carbon concrete for general applications"
+  },
+  "declared_unit": {
+    "value": 1,
+    "unit": "m3",
+    "mass_kg": 2225
+  },
+  "gwp": {
+    "unit": "kg CO2e",
+    "stages": {
+      "A1": { "value": 255, "declared": true, "name": "Raw materials" },
+      "A2": { "value": 13.8, "declared": true, "name": "Transport to factory" },
+      "A3": { "value": 5.97, "declared": true, "name": "Manufacturing" },
+      "A4": { "value": null, "declared": false, "name": "Transport to site" },
+      "A5": { "value": null, "declared": false, "name": "Installation" },
+      "B1": { "value": null, "declared": false, "name": "Use" },
+      "B2": { "value": null, "declared": false, "name": "Maintenance" },
+      "B3": { "value": null, "declared": false, "name": "Repair" },
+      "B4": { "value": null, "declared": false, "name": "Replacement" },
+      "B5": { "value": null, "declared": false, "name": "Refurbishment" },
+      "B6": { "value": null, "declared": false, "name": "Operational energy use" },
+      "B7": { "value": null, "declared": false, "name": "Operational water use" },
+      "C1": { "value": 4.23, "declared": true, "name": "Demolition" },
+      "C2": { "value": 12.0, "declared": true, "name": "Transport to disposal" },
+      "C3": { "value": 6.82, "declared": true, "name": "Waste processing" },
+      "C4": { "value": 4.17, "declared": true, "name": "Disposal" },
+      "D": { "value": -12.2, "declared": true, "name": "Benefits beyond system boundary" }
+    },
+    "totals": {
+      "A1_A3": 275,
+      "A1_A5": null,
+      "C1_C4": 27.22,
+      "full_lifecycle_excl_D": null,
+      "full_lifecycle_incl_D": null
+    }
+  },
+  "gwp_fossil": {
+    "unit": "kg CO2e",
+    "A1_A3": 274
+  },
+  "notes": {
+    "carbonation": "Not taken into account in this EPD",
+    "use_phase": "B1-B7 not declared",
+    "transport_installation": "A4-A5 not declared",
+    "recycling_rate_percent": 70,
+    "landfill_rate_percent": 30,
+    "portland_cement_reduction": "40% reduction compared to GBCA/ISC reference case"
+  }
+}

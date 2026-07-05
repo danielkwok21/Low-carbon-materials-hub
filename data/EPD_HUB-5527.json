@@ -1,0 +1,82 @@
+{
+  "epd": {
+    "id": "HUB-5527",
+    "source_file": "EPD_HUB-5527_2026-06-27_en.pdf",
+    "program_operator": "EPD Hub",
+    "published_date": "2026-02-25",
+    "valid_until": "2031-02-24",
+    "standard": "EN 15804:2012+A2:2019/AC:2021",
+    "verification": {
+      "type": "third_party",
+      "verifier": "Vera Durão"
+    }
+  },
+  "product": {
+    "name": "CTILTS4020100Enhanced",
+    "manufacturer": "Tandy Concrete",
+    "type": "Ready-mix concrete",
+    "standard": "AS 1379-2007"
+  },
+  "location": {
+    "production": "Airlie Beach, QLD, Australia",
+    "plants": ["Airlie Beach"],
+    "country": "Australia",
+    "state": "QLD"
+  },
+  "characteristics": {
+    "compressive_strength": {
+      "value": 40,
+      "unit": "MPa",
+      "class": "S40"
+    },
+    "strength_evaluation_days": 28,
+    "exposure_class": "B2",
+    "aggregate_size_mm": 20,
+    "slump_mm": 100,
+    "application": "Tilt Up Panels"
+  },
+  "declared_unit": {
+    "value": 1,
+    "unit": "m3",
+    "mass_kg": 2388
+  },
+  "gwp": {
+    "unit": "kg CO2e",
+    "stages": {
+      "A1": { "value": 254, "declared": true, "name": "Raw materials" },
+      "A2": { "value": 26.3, "declared": true, "name": "Transport to factory" },
+      "A3": { "value": 4.07, "declared": true, "name": "Manufacturing" },
+      "A4": { "value": 2.19, "declared": true, "name": "Transport to site" },
+      "A5": { "value": 16.7, "declared": true, "name": "Installation" },
+      "B1": { "value": null, "declared": false, "name": "Use" },
+      "B2": { "value": null, "declared": false, "name": "Maintenance" },
+      "B3": { "value": null, "declared": false, "name": "Repair" },
+      "B4": { "value": null, "declared": false, "name": "Replacement" },
+      "B5": { "value": null, "declared": false, "name": "Refurbishment" },
+      "B6": { "value": null, "declared": false, "name": "Operational energy use" },
+      "B7": { "value": null, "declared": false, "name": "Operational water use" },
+      "C1": { "value": 4.54, "declared": true, "name": "Demolition" },
+      "C2": { "value": 12.9, "declared": true, "name": "Transport to disposal" },
+      "C3": { "value": 7.31, "declared": true, "name": "Waste processing" },
+      "C4": { "value": 4.47, "declared": true, "name": "Disposal" },
+      "D": { "value": -13.4, "declared": true, "name": "Benefits beyond system boundary" }
+    },
+    "totals": {
+      "A1_A3": 284,
+      "A1_A5": 303.26,
+      "C1_C4": 29.22,
+      "full_lifecycle_excl_D": 332.48,
+      "full_lifecycle_incl_D": 319.08
+    }
+  },
+  "gwp_fossil": {
+    "unit": "kg CO2e",
+    "A1_A3": 284
+  },
+  "notes": {
+    "carbonation": "Not taken into account in this EPD",
+    "use_phase": "B1-B7 not declared",
+    "recycling_rate_percent": 70,
+    "landfill_rate_percent": 30
+  }
+}

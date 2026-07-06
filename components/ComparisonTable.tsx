@@ -178,7 +178,10 @@ export function ComparisonTable({ products }: ComparisonTableProps) {
                     {/* Product info */}
                     <td className="py-3 px-4 sticky left-0 bg-white">
                       <div className="font-medium text-gray-900">{epd.product.name}</div>
-                      <div className="text-xs text-gray-500">{epd.product.manufacturer}</div>
+                      <div className="text-xs text-gray-500">
+                        {epd.product.manufacturer}
+                        {epd.location.plants?.[0] && <span className="text-gray-400"> · {epd.location.plants[0]}</span>}
+                      </div>
                     </td>
 
                     {/* Strength */}
@@ -252,20 +255,21 @@ export function ComparisonTable({ products }: ComparisonTableProps) {
                     {/* Source */}
                     <td className="py-3 px-4">
                       <div className="text-xs">
-                        <span className="font-mono text-gray-600">{epd.epd.id}</span>
-                        <div>
-                          <a
-                            href={`/pdfs/${epd.epd.source_file}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:text-blue-800 hover:underline flex items-center gap-1"
-                            title={`Open ${epd.epd.source_file}`}
-                          >
-                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                            View PDF
-                          </a>
+                        <a
+                          href={`/pdfs/${epd.epd.source_file}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-800 hover:underline flex items-center gap-1"
+                          title={`Open ${epd.epd.source_file}`}
+                        >
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          View PDF
+                        </a>
+                        <div className="text-gray-500 mt-1">
+                          <div>Verified: {epd.epd.verification.verifier}</div>
+                          <div>Valid: {epd.epd.published_date.slice(0, 4)}-{epd.epd.valid_until.slice(0, 4)}</div>
                         </div>
                       </div>
                     </td>
@@ -274,36 +278,6 @@ export function ComparisonTable({ products }: ComparisonTableProps) {
               })}
             </tbody>
           </table>
-        </div>
-      </div>
-
-
-      {/* Source traceability */}
-      <div className="bg-white rounded-lg border border-gray-200 p-4 mt-6">
-        <h3 className="text-sm font-semibold text-gray-700 mb-3">EPD Sources & Verification</h3>
-        <div className="grid gap-2 text-xs">
-          {products.map(epd => (
-            <div key={epd.epd.id} className="flex flex-wrap gap-x-4 gap-y-1 py-2 border-b border-gray-100 last:border-0">
-              <span className="font-medium text-gray-900 min-w-40">{epd.product.name}</span>
-              <span className="text-gray-600">
-                <span className="text-gray-400">Source:</span>{' '}
-                <a
-                  href={`/pdfs/${epd.epd.source_file}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 hover:underline"
-                >
-                  {epd.epd.source_file}
-                </a>
-              </span>
-              <span className="text-gray-600">
-                <span className="text-gray-400">Verified by:</span> {epd.epd.verification.verifier}
-              </span>
-              <span className="text-gray-600">
-                <span className="text-gray-400">Valid:</span> {epd.epd.published_date} to {epd.epd.valid_until}
-              </span>
-            </div>
-          ))}
         </div>
       </div>
     </div>

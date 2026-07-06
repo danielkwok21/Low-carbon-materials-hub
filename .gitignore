@@ -40,4 +40,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-*.pdf
+# PDFs in public/pdfs are tracked for Vercel deployment

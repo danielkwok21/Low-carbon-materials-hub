@@ -9,9 +9,8 @@
 
 ### Repo Contents
 
-- `EXTRACTION.md` - Document extraction reasoning and approach
-- `/data/*.json` - Structured EPD data (one file per product)
-- `/app` - Next.js application code
+- [`EXTRACTION.md`](./EXTRACTION.md) - Document extraction reasoning and approach
+- [`/data`](./data) - Structured EPD data (one JSON file per product)
 
 ---
 

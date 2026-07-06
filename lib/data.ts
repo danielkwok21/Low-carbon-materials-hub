@@ -13,13 +13,22 @@ export function loadAllEPDs(): EPDData[] {
 }
 
 export function getUniqueStrengths(epds: EPDData[]): number[] {
-  const strengths = new Set(epds.map(e => e.characteristics.compressive_strength.value));
+  const strengths = new Set(
+    epds
+      .map(e => e.characteristics.compressive_strength.value)
+      .filter((v): v is number => v !== null)
+  );
   return Array.from(strengths).sort((a, b) => a - b);
 }
 
 export function getUniqueLocations(epds: EPDData[]): string[] {
   const locations = new Set(epds.map(e => e.location.state));
   return Array.from(locations).sort();
+}
+
+export function getUniqueManufacturers(epds: EPDData[]): string[] {
+  const manufacturers = new Set(epds.map(e => e.product.manufacturer));
+  return Array.from(manufacturers).sort();
 }
 
 export function calculateStageGroupTotal(epd: EPDData, group: StageKey[]): { value: number | null; complete: boolean } {

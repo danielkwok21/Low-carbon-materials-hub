@@ -1,0 +1,86 @@
+{
+  "epd": {
+    "id": "EPD-IES-0014958:001",
+    "source_file": "EPD-IES-0014958_Hymix_GE252WA06-3_2024-11-19.pdf",
+    "program_operator": "EPD International AB",
+    "regional_program": "EPD Australasia",
+    "published_date": "2024-11-19",
+    "valid_until": "2029-11-19",
+    "standard": "EN 15804:2012+A2:2019",
+    "verification": {
+      "type": "third_party",
+      "verifier": "Megan Blizzard",
+      "organization": "Epsten Group, Inc."
+    }
+  },
+  "product": {
+    "name": "HyLo-50 Normal-Class 25 MPa",
+    "manufacturer": "Hymix Australia Pty Ltd",
+    "type": "Ready-mix concrete",
+    "standard": "EN 15804:A2",
+    "epd_type": "Generic EPD"
+  },
+  "location": {
+    "production": "Gold Coast, QLD, Australia",
+    "plants": ["Labrador", "Stapylton", "Burleigh"],
+    "country": "Australia",
+    "state": "QLD"
+  },
+  "characteristics": {
+    "compressive_strength": {
+      "value": 25,
+      "unit": "MPa",
+      "class": "N25"
+    },
+    "strength_evaluation_days": 28,
+    "application": "General use",
+    "low_carbon_product": true,
+    "carbon_reduction_claim": "HyLo-50 (50% carbon reduction)"
+  },
+  "declared_unit": {
+    "value": 1,
+    "unit": "m3",
+    "mass_kg": 2315
+  },
+  "gwp": {
+    "unit": "kg CO2e",
+    "stages": {
+      "A1": { "value": null, "declared": true, "name": "Raw materials" },
+      "A2": { "value": null, "declared": true, "name": "Transport to factory" },
+      "A3": { "value": null, "declared": true, "name": "Manufacturing" },
+      "A1_A3": { "value": 141, "declared": true, "name": "Product stage total" },
+      "A4": { "value": 4.95, "declared": true, "name": "Transport to site" },
+      "A5": { "value": 10.7, "declared": true, "name": "Installation" },
+      "B1": { "value": -3.28, "declared": true, "name": "Use (recarbonation)" },
+      "B2": { "value": 0, "declared": true, "name": "Maintenance" },
+      "B3": { "value": 0, "declared": true, "name": "Repair" },
+      "B4": { "value": 0, "declared": true, "name": "Replacement" },
+      "B5": { "value": 0, "declared": true, "name": "Refurbishment" },
+      "B6": { "value": 0, "declared": true, "name": "Operational energy use" },
+      "B7": { "value": 0, "declared": true, "name": "Operational water use" },
+      "C1": { "value": 9.64, "declared": true, "name": "Demolition" },
+      "C2": { "value": 10.1, "declared": true, "name": "Transport to disposal" },
+      "C3": { "value": 4.44, "declared": true, "name": "Waste processing" },
+      "C4": { "value": 3.19, "declared": true, "name": "Disposal" },
+      "D": { "value": -13.1, "declared": true, "name": "Benefits beyond system boundary" }
+    },
+    "totals": {
+      "A1_A3": 141,
+      "A1_A5": 156.65,
+      "C1_C4": 27.37,
+      "full_lifecycle_excl_D": 180.74,
+      "full_lifecycle_incl_D": 167.64
+    }
+  },
+  "gwp_fossil": {
+    "unit": "kg CO2e",
+    "A1_A3": 141
+  },
+  "notes": {
+    "carbonation": "Recarbonation included in B1 (-3.28), C3 (-1.11), C4 stages",
+    "use_phase": "B2-B7 declared as zero (no maintenance required)",
+    "recycling_rate_percent": 78,
+    "landfill_rate_percent": 22,
+    "reference_service_life_years": 50
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "epd": {
+    "id": "HUB-5556",
+    "source_file": "EPD_HUB-5556_2026-06-27_en.pdf",
+    "program_operator": "EPD Hub",
+    "published_date": "2026-02-27",
+    "valid_until": "2031-02-26",
+    "standard": "EN 15804:2012+A2:2019/AC:2021",
+    "verification": {
+      "type": "third_party",
+      "verifier": "Vera Durão"
+    }
+  },
+  "product": {
+    "name": "50MPa 20mm Enviro 50% SCM 100SL Conc",
+    "manufacturer": "Boral Limited",
+    "type": "Ready-mix concrete",
+    "standard": "AS 1379"
+  },
+  "location": {
+    "production": "Melbourne, VIC, Australia",
+    "plants": ["Deer Park", "Tullamarine", "Somerton", "Sunbury", "Wollert", "Melton", "West Melbourne", "West Melbourne (wet)"],
+    "country": "Australia",
+    "state": "VIC"
+  },
+  "characteristics": {
+    "compressive_strength": {
+      "value": 50,
+      "unit": "MPa",
+      "class": "S50"
+    },
+    "strength_evaluation_days": 28,
+    "aggregate_size_mm": 20,
+    "slump_mm": 100,
+    "scm_content_percent": 50,
+    "application": "Lower carbon concrete - general applications"
+  },
+  "declared_unit": {
+    "value": 1,
+    "unit": "m3",
+    "mass_kg": 2377
+  },
+  "gwp": {
+    "unit": "kg CO2e",
+    "stages": {
+      "A1": { "value": 256, "declared": true, "name": "Raw materials" },
+      "A2": { "value": 6.58, "declared": true, "name": "Transport to factory" },
+      "A3": { "value": 5.62, "declared": true, "name": "Manufacturing" },
+      "A4": { "value": null, "declared": false, "name": "Transport to site" },
+      "A5": { "value": null, "declared": false, "name": "Installation" },
+      "B1": { "value": null, "declared": false, "name": "Use" },
+      "B2": { "value": null, "declared": false, "name": "Maintenance" },
+      "B3": { "value": null, "declared": false, "name": "Repair" },
+      "B4": { "value": null, "declared": false, "name": "Replacement" },
+      "B5": { "value": null, "declared": false, "name": "Refurbishment" },
+      "B6": { "value": null, "declared": false, "name": "Operational energy use" },
+      "B7": { "value": null, "declared": false, "name": "Operational water use" },
+      "C1": { "value": 4.52, "declared": true, "name": "Demolition" },
+      "C2": { "value": 12.8, "declared": true, "name": "Transport to disposal" },
+      "C3": { "value": 7.28, "declared": true, "name": "Waste processing" },
+      "C4": { "value": 4.45, "declared": true, "name": "Disposal" },
+      "D": { "value": -13.0, "declared": true, "name": "Benefits beyond system boundary" }
+    },
+    "totals": {
+      "A1_A3": 268,
+      "C1_C4": 29.05,
+      "full_lifecycle_excl_D": 297.05,
+      "full_lifecycle_incl_D": 284.05
+    }
+  },
+  "gwp_fossil": {
+    "unit": "kg CO2e",
+    "A1_A3": 268
+  },
+  "notes": {
+    "carbonation": "Not taken into account in this EPD",
+    "use_phase": "B1-B7 not declared",
+    "recycling_rate_percent": 70,
+    "landfill_rate_percent": 30,
+    "product_line": "ENVIROCRETE"
+  }
+}

@@ -9,11 +9,12 @@ interface ComparisonViewProps {
   epds: EPDData[];
   availableStrengths: number[];
   availableLocations: string[];
+  availableManufacturers: string[];
 }
 
 type SortOption = 'name' | 'gwp_a1a3' | 'strength';
 
-export function ComparisonView({ epds, availableStrengths, availableLocations }: ComparisonViewProps) {
+export function ComparisonView({ epds, availableStrengths, availableLocations, availableManufacturers }: ComparisonViewProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -26,6 +27,12 @@ export function ComparisonView({ epds, availableStrengths, availableLocations }:
 
   const selectedLocations = useMemo(() => {
     const param = searchParams.get('location');
+    if (!param) return [];
+    return param.split(',');
+  }, [searchParams]);
+
+  const selectedManufacturers = useMemo(() => {
+    const param = searchParams.get('manufacturer');
     if (!param) return [];
     return param.split(',');
   }, [searchParams]);
@@ -66,12 +73,19 @@ export function ComparisonView({ epds, availableStrengths, availableLocations }:
     updateParams({ location: newLocations.length ? newLocations.join(',') : null });
   };
 
+  const toggleManufacturer = (manufacturer: string) => {
+    const newManufacturers = selectedManufacturers.includes(manufacturer)
+      ? selectedManufacturers.filter(m => m !== manufacturer)
+      : [...selectedManufacturers, manufacturer];
+    updateParams({ manufacturer: newManufacturers.length ? newManufacturers.join(',') : null });
+  };
+
   const handleSortChange = (newSort: SortOption) => {
     updateParams({ sort: newSort });
   };
 
   const clearFilters = () => {
-    updateParams({ strength: null, location: null });
+    updateParams({ strength: null, location: null, manufacturer: null });
   };
 
   const filteredEpds = useMemo(() => {
@@ -82,9 +96,12 @@ export function ComparisonView({ epds, availableStrengths, availableLocations }:
       if (selectedLocations.length > 0 && !selectedLocations.includes(epd.location.state)) {
         return false;
       }
+      if (selectedManufacturers.length > 0 && !selectedManufacturers.includes(epd.product.manufacturer)) {
+        return false;
+      }
       return true;
     });
-  }, [epds, selectedStrengths, selectedLocations]);
+  }, [epds, selectedStrengths, selectedLocations, selectedManufacturers]);
 
   const sortedEpds = useMemo(() => {
     return [...filteredEpds].sort((a, b) => {
@@ -106,7 +123,25 @@ export function ComparisonView({ epds, availableStrengths, availableLocations }:
       {/* Filters */}
       <div className="bg-white rounded-lg border border-gray-200 p-4">
         <h2 className="text-sm font-semibold text-gray-700 mb-3">Filters</h2>
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div>
+            <label className="block text-sm text-gray-600 mb-2">Manufacturer</label>
+            <div className="flex flex-wrap gap-2">
+              {availableManufacturers.map(manufacturer => (
+                <button
+                  key={manufacturer}
+                  onClick={() => toggleManufacturer(manufacturer)}
+                  className={`px-3 py-1 rounded-full text-sm border transition-colors ${
+                    selectedManufacturers.includes(manufacturer)
+                      ? 'bg-blue-600 text-white border-blue-600'
+                      : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400'
+                  }`}
+                >
+                  {manufacturer}
+                </button>
+              ))}
+            </div>
+          </div>
           <div>
             <label className="block text-sm text-gray-600 mb-2">Compressive Strength (MPa)</label>
             <div className="flex flex-wrap gap-2">
@@ -156,7 +191,7 @@ export function ComparisonView({ epds, availableStrengths, availableLocations }:
             </select>
           </div>
         </div>
-        {(selectedStrengths.length > 0 || selectedLocations.length > 0) && (
+        {(selectedStrengths.length > 0 || selectedLocations.length > 0 || selectedManufacturers.length > 0) && (
           <button
             onClick={clearFilters}
             className="mt-3 text-sm text-blue-600 hover:text-blue-800"

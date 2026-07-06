@@ -1,0 +1,152 @@
+{
+  "epd": {
+    "id": "EPD-IES-0009353:003-ELIZABETH-N2520P-Ref",
+    "source_file": "epd-australasia-com-wp-content-uploads-2023-08-epd-ies-0009353-003-hallett-ready-mix-concrete-2026-05-04-pdf.pdf",
+    "program_operator": "EPD Australasia",
+    "published_date": "2023-07-31",
+    "valid_until": "2028-07-31",
+    "standard": "EN 15804:2012+A2:2019/AC:2021",
+    "verification": {
+      "type": "third_party",
+      "verifier": "Rob Rouwette"
+    }
+  },
+  "product": {
+    "name": "N2520P Ref",
+    "manufacturer": "Hallett Group Pty Ltd",
+    "type": "Ready-mix concrete",
+    "standard": "AS 1379"
+  },
+  "location": {
+    "production": "Elizabeth, South Australia",
+    "plants": [
+      "Elizabeth"
+    ],
+    "country": "Australia",
+    "state": "SA"
+  },
+  "characteristics": {
+    "compressive_strength": {
+      "value": 25,
+      "unit": "MPa",
+      "class": "N25"
+    },
+    "strength_evaluation_days": 28,
+    "exposure_class": null,
+    "aggregate_size_mm": 20,
+    "slump_mm": null,
+    "application": "General construction"
+  },
+  "declared_unit": {
+    "value": 1,
+    "unit": "m3",
+    "mass_kg": 2312
+  },
+  "gwp": {
+    "unit": "kg CO2e",
+    "stages": {
+      "A1": {
+        "value": 306,
+        "declared": true,
+        "name": "Raw materials"
+      },
+      "A2": {
+        "value": null,
+        "declared": true,
+        "name": "Transport to factory"
+      },
+      "A3": {
+        "value": null,
+        "declared": true,
+        "name": "Manufacturing"
+      },
+      "A4": {
+        "value": null,
+        "declared": false,
+        "name": "Transport to site"
+      },
+      "A5": {
+        "value": null,
+        "declared": false,
+        "name": "Installation"
+      },
+      "B1": {
+        "value": null,
+        "declared": false,
+        "name": "Use"
+      },
+      "B2": {
+        "value": null,
+        "declared": false,
+        "name": "Maintenance"
+      },
+      "B3": {
+        "value": null,
+        "declared": false,
+        "name": "Repair"
+      },
+      "B4": {
+        "value": null,
+        "declared": false,
+        "name": "Replacement"
+      },
+      "B5": {
+        "value": null,
+        "declared": false,
+        "name": "Refurbishment"
+      },
+      "B6": {
+        "value": null,
+        "declared": false,
+        "name": "Operational energy use"
+      },
+      "B7": {
+        "value": null,
+        "declared": false,
+        "name": "Operational water use"
+      },
+      "C1": {
+        "value": 14.67,
+        "declared": true,
+        "name": "Demolition"
+      },
+      "C2": {
+        "value": 5.91,
+        "declared": true,
+        "name": "Transport to disposal"
+      },
+      "C3": {
+        "value": 4.98,
+        "declared": true,
+        "name": "Waste processing"
+      },
+      "C4": {
+        "value": 8.38,
+        "declared": true,
+        "name": "Disposal"
+      },
+      "D": {
+        "value": -11.5,
+        "declared": true,
+        "name": "Benefits beyond system boundary"
+      }
+    },
+    "totals": {
+      "A1_A3": 306,
+      "A1_A5": null,
+      "C1_C4": 33.94,
+      "full_lifecycle_excl_D": null,
+      "full_lifecycle_incl_D": null
+    }
+  },
+  "gwp_fossil": {
+    "unit": "kg CO2e",
+    "A1_A3": 306
+  },
+  "notes": {
+    "carbonation": "Not considered (conservative approach)",
+    "use_phase": "B1-B7 not declared",
+    "recycling_rate_percent": 82,
+    "landfill_rate_percent": 18
+  }
+}

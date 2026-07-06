@@ -2,24 +2,23 @@
 
 ## Overall Strategy
 
-I approached this assessment as someone unfamiliar with EPDs and carbon accounting. Rather than diving straight into extraction, I used Claude as a domain expert to first understand what I was looking at.
+I approached this assessment as someone unfamiliar with EPDs and carbon accounting. Rather than diving straight into extraction, I used Claude to build up my domain knowledge so I can understand what I'm looking at.
 
 My process:
-1. **Domain learning** - Asked Claude to walk me through the EPD PDFs, explaining what each section meant and why it mattered
+1. **Domain learning** - Asked Claude to walk me through the EPD PDFs, the brief markdown, explaining what each section meant and why it mattered. From here I learned what lifecycle stages are, how carbon footprint are measured etc.
 2. **Q&A rounds** - Clarified my understanding of life cycle stages (A1-D), declared vs undeclared values, and what makes data comparable
-3. **Schema definition** - Once I understood the domain, I defined a JSON schema that would capture everything needed for meaningful comparison
-4. **Batch extraction** - Had Claude extract each PDF into the defined schema
-5. **Verification** - Manually spot-checked samples against source PDFs
-
-This "understand first, extract second" approach meant I could catch errors because I knew what correct data should look like.
+3. **Batch extraction** - Had Claude extract each PDF into JSON files with schema it thinks is most appropriate.
+5. **Verification** - Manually spot-checked samples against source PDFs, making sure not only accuracy, but the required context are captured.
 
 ## Model and Architecture
 
 I used Claude for both learning and extraction. The key decision was treating it as a collaborator rather than a black box:
 
-- **Why Claude over OCR pipelines**: EPDs aren't just text extraction problems. The same number means different things in different contexts (A1-A3 total vs full lifecycle). Claude could interpret context, not just read characters.
-- **Why not fine-tuned models**: With 20 documents and no training data, prompt-based extraction was more practical than building a specialised pipeline.
-- **Trade-off accepted**: This approach doesn't scale to thousands of documents, but that wasn't the requirement.
+I used Claude, simply because 
+1. I can use it locally without needing to upload PDFs to a website somewhere
+2. There's little differentiating factors since I am going to double check all of the work.
+3. I'm already paying for it.
+4. I'm familiar with it.
 
 ## Accuracy
 
@@ -30,17 +29,20 @@ Verification approach:
 - **Cross-validation**: Checked that extracted totals (A1-A3, C1-C4) matched the sum of individual stages
 - **Declared vs missing**: Explicitly marked undeclared stages as `declared: false` with `null` values - a missing stage is not zero
 
-What could go wrong:
-- **Transcription errors**: Claude might misread a value. Mitigated by spot-checking.
-- **Context misinterpretation**: A value might be extracted from the wrong table. Mitigated by including stage names in the schema for sanity-checking.
-- **Unit inconsistency**: All values are normalised to kg CO2e per 1 m³. The schema enforces this.
-
 ## Research and Process
 
-Starting without domain knowledge was actually useful - it forced me to question assumptions:
+I think this can be best explained by first examining the timeline of the questions asked
 
-- **Why some stages are blank**: Learned that B1-B7 (use phase) is typically not declared for concrete because the product is inert in use
-- **Why Stage D can be negative**: Benefits from recycling/reuse are credited back, reducing net impact
-- **Why A1-A3 alone isn't enough**: Transport and installation (A4-A5) plus end-of-life (C1-C4) can significantly change the comparison
+My conversation with Claude, chronologically
 
-The Q&A process also revealed what the app needed to communicate: that missing data is not zero data, and that comparisons must use matching stage boundaries.
+1. read the brief markdown first
+2. start part 1, but start with just one pdfs first so I can verify the data against the original pdf
+3. walk me through the JSON file, explaining the main fields that address the main concern of the brief
+4. (once I understood the JSON file, I manually then check the first JSON file against the original PDF)
+5. do the same for all pdfs
+6. what other metrics should I look at other than GWP?
+7. reading all the data/*.json, how different are the concretes here? do most of them belong to the same category?
+8. what do the compressive_strength.class mean?
+9. do part 2 of the assesment according to the markdown brief 
+
+...the rest of the conversation is back and forth on improving the UIUX of the site.

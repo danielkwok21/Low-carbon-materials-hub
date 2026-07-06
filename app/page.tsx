@@ -1,11 +1,12 @@
 import { Suspense } from 'react';
-import { loadAllEPDs, getUniqueStrengths, getUniqueLocations } from '@/lib/data';
+import { loadAllEPDs, getUniqueStrengths, getUniqueLocations, getUniqueManufacturers } from '@/lib/data';
 import { ComparisonView } from '@/components/ComparisonView';
 
 export default function Home() {
   const epds = loadAllEPDs();
   const strengths = getUniqueStrengths(epds);
   const locations = getUniqueLocations(epds);
+  const manufacturers = getUniqueManufacturers(epds);
 
   return (
     <main className="flex-1 max-w-7xl mx-auto px-4 py-8 w-full">
@@ -24,6 +25,7 @@ export default function Home() {
           epds={epds}
           availableStrengths={strengths}
           availableLocations={locations}
+          availableManufacturers={manufacturers}
         />
       </Suspense>
     </main>

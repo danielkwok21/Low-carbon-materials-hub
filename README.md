@@ -1,45 +1,44 @@
 # Low Carbon Materials Hub
 
-Compare concrete products by embodied carbon across their full life cycle. All values per 1 m³ of concrete.
+## What to Submit
 
-**Live Demo:** [https://low-carbon-materials-hub-danielkwok.vercel.app](https://low-carbon-materials-hub-danielkwok.vercel.app)
+| Item | Link |
+|------|------|
+| **GitHub repo** | [github.com/danielkwok21/Low-carbon-materials-hub](https://github.com/danielkwok21/Low-carbon-materials-hub) |
+| **Vercel deployment** | [low-carbon-materials-hub-danielkwok.vercel.app](https://low-carbon-materials-hub-danielkwok.vercel.app) |
 
-## Features
+### Repo Contents
 
-- Compare EPD (Environmental Product Declaration) data for ready-mix concrete
-- Filter by compressive strength and location
-- View GWP (Global Warming Potential) breakdown by life cycle stage
-- Support for EN 15804:2012+A2:2019 standard
+- `EXTRACTION.md` - Document extraction reasoning and approach
+- `/data/*.json` - Structured EPD data (one file per product)
+- `/app` - Next.js application code
 
-## Getting Started
+---
 
-First, install dependencies:
+## About
+
+Compare concrete products by embodied carbon across their full life cycle. All GWP values are per 1 m³ of concrete.
+
+### Features
+
+- Compare EPDs by life cycle stage (A1-D), not just headline numbers
+- Filter by compressive strength and manufacturing location
+- Clear indication of declared vs undeclared stages (missing ≠ zero)
+- Every carbon figure traceable to its source EPD
+
+### Tech Stack
+
+- Next.js 16 / React 19 / TypeScript
+- Tailwind CSS 4
+- Deployed on Vercel (auto-deploys on push to `master`)
+
+---
+
+## Local Development
 
 ```bash
 npm install
-```
-
-Then run the development server:
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Adding EPD Data
-
-See [EXTRACTION.md](./EXTRACTION.md) for the guide on extracting EPD data from PDF documents and adding new products.
-
-## Deployment
-
-This project is deployed on Vercel and automatically deploys on push to the `master` branch.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/danielkwok21/Low-carbon-materials-hub)
-
-## Tech Stack
-
-- [Next.js](https://nextjs.org) 16
-- [React](https://react.dev) 19
-- [Tailwind CSS](https://tailwindcss.com) 4
-- [TypeScript](https://www.typescriptlang.org)
+Open [http://localhost:3000](http://localhost:3000)

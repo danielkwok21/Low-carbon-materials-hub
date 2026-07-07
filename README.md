@@ -1,12 +1,7 @@
 # Low Carbon Materials Hub
 
-## What to Submit
-
-| Item | Link |
-|------|------|
-| **GitHub repo** | [github.com/danielkwok21/Low-carbon-materials-hub](https://github.com/danielkwok21/Low-carbon-materials-hub) |
-| **Vercel deployment** | [low-carbon-materials-hub-danielkwok.vercel.app](https://low-carbon-materials-hub-danielkwok.vercel.app) |
-
+ [low-carbon-materials-hub-danielkwok.vercel.app](https://low-carbon-materials-hub-danielkwok.vercel.app)
+ 
 ### Repo Contents
 
 - [`EXTRACTION.md`](./EXTRACTION.md) - Document extraction reasoning and approach
@@ -21,7 +16,7 @@ Compare concrete products by embodied carbon across their full life cycle. All G
 ### Features
 
 - Compare EPDs by life cycle stage (A1-D), not just headline numbers
-- Filter by compressive strength and manufacturing location
+- Filter by manufacturer, compressive strength, and manufacturing location
 - Clear indication of declared vs undeclared stages (missing ≠ zero)
 - Every carbon figure traceable to its source EPD
 
